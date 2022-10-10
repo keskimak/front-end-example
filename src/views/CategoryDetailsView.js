@@ -12,13 +12,13 @@ const CategoryDetailsView = () => {
             setCategory(data);
         }
         getCategory();
-    },[]);
+    },[categoryId]);
 
     return(
         <div>
             <h1>Details of a Category</h1>
 
-            { category && category.id != undefined ?
+            { category && category.id !== undefined ?
             <dl>
                 <dt>id: {category.id}</dt>
                 <dd>name: {category.name}</dd>

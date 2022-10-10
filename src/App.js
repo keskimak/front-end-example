@@ -3,6 +3,8 @@ import { Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
 import CategoryListView from './views/CategoryListView';
 import CategoryDetailsView from "./views/CategoryDetailsView";
+import MemberListView from "./views/MemberListView";
+import MemberDetailsView from "./views/MemberDetailsView";
 
 
 function App() {
@@ -15,14 +17,17 @@ function App() {
           paddingBottom: "1rem",
         }}
       >
-       <NavLink to="/category"> Categories</NavLink> 
- 
+        <NavLink to="/category"> Categories</NavLink>
+        <NavLink to="/member"> Members</NavLink>
       </nav>
       <Routes>
-        <Route path="/category" element={<CategoryListView />}/>
-        <Route path="/category/:categoryId" element={<CategoryDetailsView />}/>
+        <Route path="/category" element={<CategoryListView />} />
+        <Route path="/category/:categoryId" element={<CategoryDetailsView />} />
+        <Route path="/member" element={<MemberListView />} />
+        <Route path="/member/:memberId" element={<MemberDetailsView />} />
+
       </Routes>
-      
+
 
     </div>
   );

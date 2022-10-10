@@ -23,8 +23,33 @@ const fetchOneCategoryById = async (categoryId) => {
     return category;
 };
 
+const fetchMembers = async () => {
+    const request = new Request(`${baseUrl}/member/all`,{
+        method: 'GET',  
+    });
+
+    const response = await fetch(request);
+    const data = await response.json();
+    return data;
+};
+
+
+const fetchOneMemberyById = async (memberId) => {
+    const request = new Request(`${baseUrl}/member/${memberId}`,{
+        method: 'GET',  
+    });
+
+    const response = await fetch(request);
+    const data = await response.json();
+
+    const member = data && data.length>0 ? data[0] : null;
+    return member;
+};
+
+
+
 
 const dao = {
-    fetchCategories,  fetchOneCategoryById }
+    fetchCategories,  fetchOneCategoryById, fetchMembers, fetchOneMemberyById }
 
 export default dao;
