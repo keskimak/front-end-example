@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route, NavLink } from "react-router-dom";
 import "./App.css";
 import CategoryListView from './views/CategoryListView';
 import CategoryDetailsView from "./views/CategoryDetailsView";
