@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
+import "./App.css";
+import CategoryListView from './views/CategoryListView';
+import CategoryDetailsView from "./views/CategoryDetailsView";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Front page</h1>
+      <nav
+        style={{
+          borderBottom: "solid 1px",
+          paddingBottom: "1rem",
+        }}
+      >
+       <NavLink to="/category"> Categories</NavLink> 
+ 
+      </nav>
+      <Routes>
+        <Route path="/category" element={<CategoryListView />}/>
+        <Route path="/category/:categoryId" element={<CategoryDetailsView />}/>
+      </Routes>
+      
+
     </div>
   );
 }
